@@ -17,7 +17,7 @@ export class CdkPipelineStack extends cdk.Stack {
      * Then you also need to add that as plaintext inside of AWS SecretsManager.
      * Make sure to make the strings match.
      */
-    const githubAccessToken = cdk.SecretValue.secretsManager("github-token");
+    const githubAccessToken = cdk.SecretValue.secretsManager("github_token");
     const cdkDefaultAccount = cdk.SecretValue.secretsManager(
       "cdk-default-account"
     ).unsafeUnwrap();
@@ -31,6 +31,7 @@ export class CdkPipelineStack extends cdk.Stack {
      * 2. It runs the `commands` inside the CI/CD Pipeline Shell (similar to your Macbook terminal)
      * 3. Check out the root package.json to see the custom scripts, just to make life easier.
      */
+    //line 3 imported pipelines which has the built in method codepipeline; essentially these eight lines of code to get the pipeline up
 
     const pipeline = new pipelines.CodePipeline(this, "CdkCodePipeline", {
       pipelineName: "CdkCodePipeline",

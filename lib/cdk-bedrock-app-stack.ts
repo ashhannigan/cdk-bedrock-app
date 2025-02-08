@@ -36,6 +36,8 @@ export class CdkBedrockAppStack extends cdk.Stack {
      * file called "index" (index.ts in our case) and the function name
      * is called "handler", these can be changed easily. You can have
      * "pug.beagle" if you wanted to, but index.handler is convention.
+     * 
+     * need to specify lambda runtime
      */
     const queryBedrockLambda = new lambda.Function(
       this,
